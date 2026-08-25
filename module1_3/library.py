@@ -118,6 +118,7 @@ class LibraryHandler(BaseHTTPRequestHandler):
 
     def read_json_body(self):
         length = int(self.headers.get("Content-Length", 0))
+        print(f'sajjan')
         if length == 0:
             return {}
         raw = self.rfile.read(length)
