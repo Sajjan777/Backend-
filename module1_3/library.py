@@ -116,15 +116,15 @@ class LibraryHandler(BaseHTTPRequestHandler):
             payload["details"] = details
         self.send_json(status_code, payload)
 
-    def read_json_body(self):
-        length = int(self.headers.get("Content-Length", 0))
-        if length == 0:
-            return {}
-        raw = self.rfile.read(length)
-        try:
-            return json.loads(raw.decode())
-        except json.JSONDecodeError:
-            return None  # signals "malformed JSON" to the caller
+    # def read_json_body(self):
+    #     length = int(self.headers.get("Content-Length", 0))
+    #     if length == 0:
+    #         return {}
+    #     raw = self.rfile.read(length)
+    #     try:
+    #         return json.loads(raw.decode())
+    #     except json.JSONDecodeError:
+    #         return None  # signals "malformed JSON" to the caller
 
     def log_message(self, fmt, *args):
         # Quieter default logging; print our own structured line instead.
