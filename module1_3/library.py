@@ -1,18 +1,5 @@
 """
 Library Management System - raw Python HTTP server
-====================================================
-This unifies Module 1.1 (client-server / request-response), Module 1.2
-(HTTP methods, status codes, headers), and Module 1.3 (REST API design
-for Users, Books, Authors, Borrowings).
-
-No Django, no database yet - just Python's built-in http.server and
-plain dictionaries acting as a fake "database". This is intentional:
-it proves that the API's SHAPE (URLs, methods, status codes, JSON
-responses) is a separate concern from WHAT stores the data underneath.
-
-In Week 4, these dictionaries will be replaced by real PostgreSQL
-tables accessed through the Django ORM - but the API contract you
-designed in Module 1.3 stays the same.
 """
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
